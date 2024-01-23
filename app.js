@@ -43,7 +43,7 @@ function generarNumeroSecreto (){
 console.log(numeroSecreto);
 
 function condicionesIniciales () {
-    asignarTextoElemento('h1' ,'Adivina el nùmero secreto');
+    asignarTextoElemento('h2' ,'Adivina el nùmero secreto');
     asignarTextoElemento('p' , 'Ingrese un nùmero del 1 al 10');
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;

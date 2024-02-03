@@ -9,7 +9,7 @@ function verificarIntento () {
     console.log(intentos);
     
     if (numerodeUsuario === numeroSecreto) {
-        asignarTextoElemento('p' , `¡Te felicito! Acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'} `);
+        asignarTextoElemento('h2' , `¡Te felicito! Acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'} `);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         if (numerodeUsuario > numeroSecreto){

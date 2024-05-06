@@ -27,7 +27,7 @@ body::before {
 
 .container {
     width: 1200px;
-    height: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -107,3 +107,72 @@ button {
     font-size: 32px;
     font-weight: 400;
 }
+.container {
+    animation: aparecer 2s ease-in-out;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container__boton {
+    animation: mover 1s ease-in-out infinite;
+}
+
+@keyframes mover {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .container__imagen-persona{
+        width: 300px  ;  
+}
+    .container__contenido {
+        flex-direction: column;
+    }
+
+    .container__informaciones {
+        padding: 1rem;
+    }
+
+    .container__boton {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .container__input {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .container__botones {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .texto__parrafo {
+        font-size: 18px;
+    }
+}
+  

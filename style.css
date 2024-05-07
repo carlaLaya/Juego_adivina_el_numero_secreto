@@ -1,157 +1,132 @@
 body {
-    background: linear-gradient(#78d24b 0%, #bbe4af 33.33%, #c2d5be 66.67%, #dceed9 100%);
-    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    width: 1200px;
-    height: 500px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 24px;
-    border: 1px solid #249f2d;
-    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
-    background-size: 100% 100%;
-    position: relative;
-    animation: aparecer 2s ease-in-out;
-    transition: all 0.3s ease; /* Agrega esta línea */
-}
-
-.container:hover {
-    transform: scale(1.02); /* Agrega esta línea */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #def1cc;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .container__contenido {
     display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    transition: all 0.3s ease; /* Agrega esta línea */
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-.container__contenido:hover {
-    transform: translateY(-10px); /* Agrega esta línea */
+.container__imagen-persona {
+    order: -1;
+    width: 30%;
+    height: auto;
+    margin-bottom: 20px;
+    justify-content: end;
 }
+
 .container__informaciones {
-    flex: 1;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-.container__texto {
-    margin: 20px 0 16px 10px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+.container__texto h1, .container__texto  {
+    margin: 30px;
+    color: #00b306;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h5{
+    margin: 10px;
+    color: #5c615c;
+    text-align: center;
+    font-weight: 500;
     font-size: 20px;
-    font-weight: 900;
-    color: #052310;
-}
-
-.titulo {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
-}
-
-p {
-    font-size: 22px;
-    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container__input {
-    width: 80%;
-    height: 60px;
-    border-radius: 16px;
-    background-color: #eef3ea;
-    border: none;
-    color: black;
-    padding: 2rem;
-    font-size: 24px;
-    font-weight: 700;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: auto; 
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 26px;
 }
 
 .container__botones {
     display: flex;
-    gap: 2em;
+    justify-content: center;
+    gap: 20px;
+    margin-top: auto; 
 }
 
 .container__boton {
-    border-radius: 16px;
-    background: rgb(68, 238, 11);
-    padding: 16px 24px;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 700;
+    padding: 20px 20px;
+    margin: 40px;
     border: none;
-    margin-top: 2rem;
-    animation: mover 1s ease-in-out infinite;
+    border-radius: 5px;
+    background-color: #00b306;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
 }
 
-.boton-intentar {
-    background: #249f2d;
-    color: white;
+.container__boton:hover {
+    background-color: #24ed3f;
 }
 
-.boton-reiniciar {
-    background: #6fe777;
-    color: white;
+.container__boton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
-
-.container__imagen-persona {
-    width: 700px;
-    height: auto;
-}
-
-@media (max-width: 1024px) {
-    .container {
-        width: 80%;
-    }
-
-    .container__imagen-persona {
-        width: 500px;
-    }
+.footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #def1cc;
+    text-align: center;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
 }
 
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .container__imagen-persona {
-        width: 300px;
-    }
+   
 }
 
-@media (max-width: 480px) {
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+
     .container {
-        flex-direction: column;
+        width: 90%;
     }
 
     .container__contenido {
         flex-direction: column;
     }
 
-    .container__informaciones {
-        padding: 1rem;
+    .container__imagen-persona, .container__informaciones {
+        width: 100%;
     }
 
     .container__boton {
+        margin: 20px;
         font-size: 16px;
-        padding: 8px 12px;
     }
-
-    .container__imagen-persona {
-        width: 40%;
-    }
-    .container__texto{
-        font-size: 5px;
-    }
-    .container__input{
-        width: 10%;
-
+    .footer {
+        position: static;
     }
 }

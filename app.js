@@ -6,22 +6,35 @@ let intentos = 1;
 function verificarIntento () {
     //colocar parseInt para convertir el valor en un numero
     let numerodeUsuario = parseInt(document.getElementById('valorUsuario').value);
-    console.log(intentos);
     
     if (numerodeUsuario === numeroSecreto) {
-        asignarTextoElemento('h2' , `¡TE FELICITO! Acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'} `);
+        asignarTextoElemento('h1' , `¡TE FELICITO! Acertaste el numero en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'} `);
+    
+        // Obtiene la imagen inicial y la oculta
+        let imagenInicial = document.querySelector('.container__imagen-persona');
+        imagenInicial.style.display = 'none';
+    
+        // Crea una nueva imagen y la añade al documento
+        let img = document.createElement('img');
+        img.src = "./img/toy_todos.jpg"; // Asigna la ruta de la imagen al atributo src        img.alt = "./img/toy_dog.png";
+        img.width = 50; // Ajusta esto al tamaño que prefieras
+        img.className = "container__imagen-persona"; // Asegúrate de que la nueva imagen tenga la misma clase que la imagen inicial
+        document.querySelector('.container__contenido').appendChild(img);
+    
         document.getElementById('reiniciar').removeAttribute('disabled');
+      
     } else {
         if (numerodeUsuario > numeroSecreto){
-            asignarTextoElemento('p' , 'El numero secreto es menor');
+            asignarTextoElemento('h5' , 'El numero secreto es menor');
         } else{
-            asignarTextoElemento('p' , 'El numero secreto es mayor');
+            asignarTextoElemento('h5' , 'El numero secreto es mayor');
         }
         intentos ++;
         limpiarCampo();
     }
     return;
 }
+   
 
 function limpiarCampo(){
     document.querySelector('#valorUsuario').value = '';
@@ -43,8 +56,8 @@ function generarNumeroSecreto (){
 console.log(numeroSecreto);
 
 function condicionesIniciales () {
-    asignarTextoElemento('h2' ,'Adivina el nùmero secreto');
-    asignarTextoElemento('p' , 'Ingrese un nùmero del 1 al 10');
+    asignarTextoElemento('h1' ,'Adivina el nùmero secreto');
+    asignarTextoElemento('h5' , 'Ingrese un nùmero del 1 al 10');
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
 }

@@ -4,7 +4,7 @@ let intentos = 1;
 
 //validar usuario ingresado en el input
 function verificarIntento () {
-    //colocar parseInt para convertir el valor en un numero
+    //coloco parseInt para convertir el valor en un numero
     let numerodeUsuario = parseInt(document.getElementById('valorUsuario').value);
     
     if (numerodeUsuario === numeroSecreto) {
@@ -14,11 +14,11 @@ function verificarIntento () {
         let imagenInicial = document.querySelector('.container__imagen-persona');
         imagenInicial.style.display = 'none';
     
-        // Crea una nueva imagen y la añade al documento
+        // Creo una nueva imagen y la añade al documento
         let img = document.createElement('img');
-        img.src = "./img/toy_todos.jpg"; // Asigna la ruta de la imagen al atributo src        img.alt = "./img/toy_dog.png";
-        img.width = 50; // Ajusta esto al tamaño que prefieras
-        img.className = "container__imagen-persona"; // Asegúrate de que la nueva imagen tenga la misma clase que la imagen inicial
+        img.src = "./img/toy_todos.jpg"; // Asigna la ruta de la imagen 
+        img.width = 50; // Ajusto esto al tamaño que prefieras
+        img.className = "container__imagen-persona"; // nueva imagen, misma clase que la imagen inicial
         document.querySelector('.container__contenido').appendChild(img);
     
         document.getElementById('reiniciar').removeAttribute('disabled');
@@ -53,7 +53,7 @@ function generarNumeroSecreto (){
     return numeroSecreto;
 
 }
-console.log(numeroSecreto);
+//funcion condiciones iniciales
 
 function condicionesIniciales () {
     asignarTextoElemento('h1' ,'Adivina el nùmero secreto');
@@ -61,6 +61,7 @@ function condicionesIniciales () {
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;
 }
+//funcion para reiniciar y borrar juego
 
 function reiniciarJuego () {
     limpiarCampo();
